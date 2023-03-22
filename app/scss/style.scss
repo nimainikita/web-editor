@@ -1,0 +1,82 @@
+// Import default variables and available mixins.
+@import "../../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../../node_modules/uikit/src/scss/mixins-theme.scss";
+
+// Import UIkit.
+@import "../../node_modules/uikit/src/scss/uikit-theme.scss";
+
+$panel_height: 64px;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+iframe{
+  position: absolute;
+  top:$panel_height;
+  left:0;
+  width: 100%;
+  height: calc(100vh - #{$panel_height});
+}
+
+.panel{
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  height: $panel_height;
+  border-bottom: 1px solid black;
+  background: rgb(167, 135, 106);
+}
+
+.spinner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s all;
+
+  &.active{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  div{
+    color:#fff;
+    fill:#fff;
+  }
+}
+
+.login-container{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgba(0,0,0, .5);
+  z-index: 2;
+
+  .login{
+    width: 600px;
+    padding:30px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  .login-error{
+    color:red;
+    display: block;
+    margin-top: 10px;
+  }
+}
