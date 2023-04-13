@@ -17,7 +17,7 @@ const Login = (props) => {
       type="password" name="" className="uk-input uk-margin-top" placeholder="Пароль" onChange={onPasswordChange} value={pass}/>
       {logError}
       <button onClick={()=>props.login(pass)}
-      className="uk-button uk-button-primary uk-margin-top" type="button">Войти</button>
+      className="uk-button uk-button-danger uk-margin-top" type="button">Войти</button>{/*ЗДЕСЬ СМЕНИЛИ ЦВЕТ КНОПКИ*/}
 
     </div>
   </div>
